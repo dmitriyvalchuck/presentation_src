@@ -1,0 +1,42 @@
+#header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#content {
+    float: left;
+    width: 60%;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+
+#content .inner {
+    margin-right: 2%;
+
+}
+
+.sidebar{
+    float: left;
+    margin: 0 0 20px 1%;
+    padding: 0;
+}
+
+
+#bar1{
+    width:20%;
+}
+
+#bar2{
+    width:18%;
+}
+
+
+
+#footer {
+    clear: both;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
