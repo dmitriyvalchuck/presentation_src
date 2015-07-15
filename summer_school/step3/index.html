@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Blog</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/clear.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Third-party libraries -->
+    <script src="js/lib/modernizr.custom.js"></script>
+    <script src="js/lib/jquery.js"></script>
+    <script src="js/lib/underscore.js"></script>
+    <script src="js/lib/backbone.js"></script>
+
+    <!-- Custom functions -->
+    <script src="js/custom.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="main">
+        <ul class="cbp_tmtimeline" id="posts">
+
+        </ul>
+    </div>
+</div>
+
+<!-- Adding post item form temlate -->
+<script type="text/template" id="add-form-template">
+    <li id="add-form">
+        <time class="cbp_tmtime" datetime="2014-07-11 00:00"><span></span> <span>NOW</span></time>
+        <div class="cbp_tmlabel">
+            <h2><input class="title" type="text" value="" maxlength="30"></h2>
+            <p><textarea class="text"></textarea></p>
+            <button type="button" class="add" id="add">ADD</button>
+        </div>
+    </li>
+</script>
+
+<!-- Post item underscore template -->
+<script type="text/template" id="post-template">
+    <time class="cbp_tmtime" datetime="<%= dt.full %>"><span><%= dt.day %></span> <span><%= dt.time %></span></time>
+    <div class="cbp_tmlabel">
+        <button type="button" class="edt edt-hid edit">EDT</button>
+        <button type="button" class="edt edt-hid delete">DEL</button>
+        <h2 class="edt-hid"><%= title %></h2>
+        <p class="edt-hid"><%= text %></p>
+
+        <h2 class="edt-shw"><input class="title" type="text" value="<%= title %>" maxlength="30"></h2>
+        <p class="edt-shw"><textarea class="text"><%= text %></textarea></p>
+        <button type="button" class="add save edt-shw">SAVE</button>
+        <button type="button" class="add cancel edt-shw">CANCEL</button>
+    </div>
+</script>
+
+/* Backbone modules */
+<script src="src/post.js"></script>
+
+/* App init script */
+<script src="js/init.js"></script>
+</body>
+</html>
