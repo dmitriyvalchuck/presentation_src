@@ -8,43 +8,42 @@
  * Constants.
  */
 var SPLASH_CONTAINER_ID = "script-holder-1",
-	DISPLAY_SHOW = "block",
-	DISPLAY_HIDE = "none";
+    DISPLAY_SHOW = "block",
+    DISPLAY_HIDE = "none";
 
 /*
  * Static class.
  */
 var BingoSplashScreen = function () {
-    _instance = null;
-    _tagId    = SPLASH_CONTAINER_ID;
+    var _instance = null;
+    var _tagId = SPLASH_CONTAINER_ID;
 
     function SplashScreen(tagId) {
-    	this._id = tagId;
-    	this.show = function() {
-			var spSc = document.getElementById(this._id);
-			spSc.style.display = DISPLAY_SHOW;
-		};
-		this.hide = function() {
-    		var spSc = document.getElementById(this._id);
-    		spSc.style.display = DISPLAY_HIDE;
-    	};
-    	this.changeTagId = function(tagId) {
-    		this._id = tagId;
-    	};
+        this._id = tagId;
+        this.show = function () {
+            var spSc = document.getElementById(this._id);
+            spSc.style.display = DISPLAY_SHOW;
+        };
+        this.hide = function () {
+            var spSc = document.getElementById(this._id);
+            spSc.style.display = DISPLAY_HIDE;
+        };
+        this.changeTagId = function (tagId) {
+            this._id = tagId;
+        };
     }
 
-    getInstance = function() {
-        if(!_instance)
-        	_instance = new SplashScreen(_tagId);
+    getInstance = function () {
+        if (!_instance)
+            _instance = new SplashScreen(_tagId);
 
         return _instance;
-    };   
+    };
 
     return {
-    	getInstance: getInstance
-	};
+        getInstance: getInstance
+    };
 }();
-
 
 
 /*

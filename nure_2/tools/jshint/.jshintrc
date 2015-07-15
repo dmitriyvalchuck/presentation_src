@@ -23,6 +23,6 @@
         "$": true,
         "ActiveXObject": true,
         "angular": true,
-	"Class": true
+	    "Class": true
     }
 }

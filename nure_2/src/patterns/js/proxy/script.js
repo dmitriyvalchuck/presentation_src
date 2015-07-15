@@ -16,7 +16,9 @@ var IDOM = function() {
 /*
  * Real object.
  */
-var JQuery = function() {};
+var JQuery = function() {
+
+};
 
 JQuery.prototype = new IDOM();
 

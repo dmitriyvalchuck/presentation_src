@@ -68,7 +68,7 @@ UserException.prototype = new Exception();
  * Using
  */
 console.info("Default scope exception");
-var runtimeException = new RuntimeException("runtime", "Runtime exception!", null);
+var runtimeException = new Exception("exception", "Runtime exception!", null);
 runtimeException.print();
 
 // Handle all runtime exceptions from the same scope
