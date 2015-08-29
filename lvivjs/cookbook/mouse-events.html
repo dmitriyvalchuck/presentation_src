@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Mouse events handling example</title>
+
+    <script src="../lib/d3.v3.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            draw();
+        };
+
+        function draw() {
+            var svg = d3.select("body").append("svg");
+
+            var data = [
+                {"name": "Square 1", "x": 10, "y": 10, "height": 100, "width": 100, "fill": "green"},
+                {"name": "Square 2", "x": 25, "y": 25, "height": 70, "width": 70, "fill": "yellow"}
+            ];
+
+            var squares = svg.append("g")
+                .selectAll("rect")
+                .data(data)
+                .enter()
+                .append("rect")
+                .attr("x", function (d) {
+                    return d.x
+                })
+                .attr("y", function (d) {
+                    return d.y
+                })
+                .attr("height", function (d) {
+                    return d.height
+                })
+                .attr("width", function (d) {
+                    return d.width
+                })
+                .attr("fill", function (d) {
+                    return d.fill
+                })
+                .attr("stroke", "red")
+                .attr("stroke-width", 0)
+                .on("mouseover", function () {
+                    d3.select(this)
+                        .transition()
+                        .duration(500)
+                        .attr("stroke-width", 3)
+                })
+                .on("mouseout", function () {
+                    d3.select(this)
+                        .transition()
+                        .duration(500)
+                        .attr("stroke-width", 0)
+                })
+                .on("click", function() {
+                    d3.select(this)
+                        .transition()
+                        .duration(500)
+                        .attr("fill", "blue");
+                })
+                .on("dblclick", function() {
+                    d3.select(this)
+                        .transition()
+                        .duration(500)
+                        .attr("fill", "red");
+                });
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

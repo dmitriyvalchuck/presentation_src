@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>External data loading example</title>
+    <script src="../lib/d3.v3.min.js"></script>
+    <script>
+        d3.csv("../data/animals.csv", function(data) {
+            console.log("CSV data parsed", data);
+        });
+
+        d3.tsv("../data/animals.tsv", function(data) {
+            console.log("TSV data parsed", data);
+        });
+
+        var psv = d3.dsv("|", "text/plain");
+        psv("../data/animals_piped.txt", function(data) {
+            console.log("Custom data parsed", data);
+        });
+
+        d3.json("../data/animals.json", function(data) {
+            console.log("JSON data parsed", data);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
