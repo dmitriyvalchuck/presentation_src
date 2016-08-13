@@ -5,3 +5,4 @@
 - `/summer_school` directory contains sources for http://www.slideshare.net/oprohonnyi/frontend-rich-javascript-application-creation-backbonejs presentation for summer school's students
 - `/lvivjs` directory contains sources for LvivJS conference speech.
 - `/ternopiljs` directory contains sources for TernopilJS meetup speech.
+- `/ng-training` directory contains sources for Angular.js training series.
